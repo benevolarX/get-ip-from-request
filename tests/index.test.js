@@ -1,5 +1,5 @@
-import test from 'tape'
-import { isIpv4, isIpv6, isIp } from '../lib/index.js'
+const { test } = require('tape')
+const { isIpv4, isIpv6, isIp } = require('../lib/index.js')
 
 const v4 = [
     '0.0.0.0',

@@ -1,12 +1,11 @@
 {
   "name": "get-ip-from-request",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "get ip client from request",
   "files": [
     "dist"
   ],
   "main": "./dist/index.js",
-  "type": "module",
   "engines": {
     "node": ">=14.15.5"
   },
@@ -28,7 +27,7 @@
     "address",
     "headers",
     "validate",
-    "es7"
+    "es2020"
   ],
   "author": "benevolarX",
   "license": "MIT",
