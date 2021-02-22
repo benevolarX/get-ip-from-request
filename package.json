@@ -3,8 +3,13 @@
   "version": "1.0.0",
   "description": "get ip client from request",
   "main": "index.js",
+  "type": "module",
+  "engines": {
+    "node": ">=14.15.5"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "esbuild lib/index.js --bundle --minify --sourcemap --platform=node --target=es2020 --outfile=/dist/index.js",
+    "test": "node tests/index.test.js"
   },
   "repository": {
     "type": "git",
@@ -12,7 +17,15 @@
   },
   "keywords": [
     "ip",
-    "request"
+    "request",
+    "ipv4",
+    "ipv6",
+    "regex",
+    "client",
+    "address",
+    "headers",
+    "validate",
+    "es7"
   ],
   "author": "benevolarX",
   "license": "MIT",
@@ -21,6 +34,7 @@
   },
   "homepage": "https://github.com/benevolarX/get-ip-from-request#readme",
   "devDependencies": {
+    "esbuild": "^0.8.50",
     "tape": "^5.2.0"
   }
 }
