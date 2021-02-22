@@ -1,0 +1,26 @@
+{
+  "name": "get-ip-from-request",
+  "version": "1.0.0",
+  "description": "get ip client from request",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benevolarX/get-ip-from-request.git"
+  },
+  "keywords": [
+    "ip",
+    "request"
+  ],
+  "author": "benevolarX",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/benevolarX/get-ip-from-request/issues"
+  },
+  "homepage": "https://github.com/benevolarX/get-ip-from-request#readme",
+  "devDependencies": {
+    "tape": "^5.2.0"
+  }
+}
