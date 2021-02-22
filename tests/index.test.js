@@ -280,28 +280,28 @@ test('ip v6 is true', t => {
 test('not ip v4 is false', t => {
     t.plan(v4not.length)
     for (const ip of v4not) {
-        t.ok(!isIpv4(ip))
+        t.notok(isIpv4(ip))
     }
 })
 
 test('not ip v6 is true', t => {
     t.plan(v6not.length)
     for (const ip of v6not) {
-        t.ok(!isIpv6(ip))
+        t.notok(isIpv6(ip))
     }
 })
 
 test('ip v4 is not ipv6', t => {
     t.plan(v4.length)
     for (const ip of v4) {
-        t.ok(!isIpv6(ip))
+        t.notok(isIpv6(ip))
     }
 })
 
 test('ip v6 is not ipv4', t => {
     t.plan(v6.length)
     for (const ip of v6) {
-        t.ok(!isIpv4(ip))
+        t.notok(isIpv4(ip))
     }
 })
 
@@ -322,13 +322,13 @@ test('ip v6 is ip', t => {
 test('not ip v4 is not ip', t => {
     t.plan(v4not.length)
     for (const ip of v4not) {
-        t.ok(!isIp(ip))
+        t.notok(isIp(ip))
     }
 })
 
 test('not ip v6 is not ip', t => {
     t.plan(v6not.length)
     for (const ip of v6not) {
-        t.ok(!isIp(ip))
+        t.notok(isIp(ip))
     }
 })
