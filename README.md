@@ -21,7 +21,14 @@ console.log(isIpv4(localhost)); // true
 console.log(isIpv6(localhost)); // false
 
 const server = createServer((req, res) => {
-  const ip = getIpFromRequest(req)
+
+  // simple use
+  // const ip = getIpFromRequest(req)
+
+  // OR custum use
+  const myPersonnalGetIpFromRequest = getIpFromRequestBuilder({ headers: ['my-ip-header-want-to-be-check']})
+  const ip = myPersonnalGetIpFromRequest(req)
+
   const obj = { ip: ip }
   return res.end(JSON.stringify(obj))
 })
