@@ -2,7 +2,10 @@
   "name": "get-ip-from-request",
   "version": "1.0.0",
   "description": "get ip client from request",
-  "main": "index.js",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
   "type": "module",
   "engines": {
     "node": ">=14.15.5"
