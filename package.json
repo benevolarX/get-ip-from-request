@@ -1,6 +1,6 @@
 {
   "name": "get-ip-from-request",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "get ip client from request and validate ip (v4/v6)",
   "main": "dist/index.js",
   "files": [
@@ -8,9 +8,10 @@
   ],
   "types": "./lib/index.d.ts",
   "engines": {
-    "node": ">=14.15.5"
+    "node": ">=14.16.0"
   },
   "scripts": {
+    "bench": "node benchmark/index.js",
     "build": "esbuild lib/index.js --bundle --minify --sourcemap --platform=node --target=es2020 --outfile=/dist/index.js",
     "test": "node tests/index.test.js"
   },
@@ -37,7 +38,10 @@
   },
   "homepage": "https://github.com/benevolarX/get-ip-from-request#readme",
   "devDependencies": {
+    "benchmark": "^2.1.4",
     "esbuild": "^0.8.50",
+    "is_js": "^0.9.0",
+    "microtime": "^3.0.0",
     "tape": "^5.2.0"
   }
 }
