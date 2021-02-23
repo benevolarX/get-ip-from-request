@@ -1,13 +1,14 @@
 {
   "name": "get-ip-from-request",
-  "version": "1.0.2",
-  "description": "get ip client from request",
+  "version": "1.0.3",
+  "description": "get ip client from request and validate ip (v4/v6)",
   "files": [
-    "dist"
+    "lib/index.js",
+		"lib/index.d.ts"
   ],
-  "main": "./dist/index.js",
+  "types": "./lib/index.d.ts",
   "engines": {
-    "node": ">=14.15.5"
+    "node": "^10 || ^12 || ^13.14 || >=14.15.5"
   },
   "scripts": {
     "build": "esbuild lib/index.js --bundle --minify --sourcemap --platform=node --target=es2020 --outfile=/dist/index.js",
