@@ -16,9 +16,9 @@ npm i get-ip-from-request@latest
 const { createServer } = require('http');
 const { isIp, isIpv4, isIpv6, getIpFromRequestBuilder, getIpFromRequest } = require('get-ip-from-request');
 const localhost = '127.0.0.1';
-console.log(isIp(localhost)); // true
-console.log(isIpv4(localhost)); // true
-console.log(isIpv6(localhost)); // false
+console.log(`${localhost} is ip ? `, isIp(localhost)); // true
+console.log(`${localhost} is ip v4 ? `, isIpv4(localhost)); // true
+console.log(`${localhost} is ip v6 ? `, isIpv6(localhost)); // false
 
 const server = createServer((req, res) => {
 
