@@ -1,5 +1,5 @@
 const { test } = require('tape')
-const { isIpv4, isIpv6, isIp } = require('../lib/index.js')
+const { isIpv4, isIpv6, isIp } = require('../dist/index.js')
 
 const v4 = [
     '0.0.0.0',
@@ -331,4 +331,12 @@ test('not ip v6 is not ip', t => {
     for (const ip of v6not) {
         t.notok(isIp(ip))
     }
+})
+
+test('test localhost', t => {
+    t.plan(3)
+    const localhost = '127.0.0.1'
+    t.ok(isIp(localhost))
+    t.ok(isIpv4(localhost))
+    t.notok(isIpv6(localhost))
 })
