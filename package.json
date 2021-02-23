@@ -1,6 +1,6 @@
 {
   "name": "get-ip-from-request",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "get ip client from request and validate ip (v4/v6)",
   "main": "dist/index.js",
   "files": [
