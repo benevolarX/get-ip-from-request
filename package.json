@@ -2,6 +2,7 @@
   "name": "get-ip-from-request",
   "version": "1.0.4",
   "description": "get ip client from request and validate ip (v4/v6)",
+  "main": "dist/index.js",
   "files": [
     "lib/index.js",
 		"lib/index.d.ts"
