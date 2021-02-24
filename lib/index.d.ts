@@ -1,9 +1,5 @@
 import { IncomingMessage } from 'http'
 
-declare const ipv4: string
-
-declare const ipv6: string
-
 declare function isIpv4(v?: string): boolean
 
 declare function isIpv6(v?: string): boolean
