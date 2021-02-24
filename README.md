@@ -53,6 +53,19 @@ const server = createServer((req, res) => {
 | isIp    | 1.0.10  | 5,326             | 0.18-0.37 | 90-94 | 5,262         | 5,371         |
 | is.ip   | 0.9.0   | 4,557             | 0.14-0.18 | 94-95 | 4,480         | 4,619         |
 
+* __Machine:__ Windows 10 - x64 | AMD Ryzen 3 1300X Quad-Core - 3.5GHz | 8GB RAM.
+* __Method:__ `require('benchmark').Suite`. (5 rounds to measure min, max & average)
+* __Node:__ `v15.10.0`
+* __Run:__ Wed, 24 Feb 2021 12:36:42 GMT 2021
+
+|         | Version | ops/sec (average) | +-%       | runs  | ops/sec min   | ops/sec max   |
+| :--     | --:     | :-:               | --:       | --:   | --:           | --:           |
+| isIpv4  | 1.1.0   | 183,923           | 0.20-0.28 | 92-95 | 182,022       | 185,032       |
+| is.ipv4 | 0.9.0   | 183,512           | 0.27-0.33 | 89-94 | 180,761       | 185,693       |
+| isIpv6  | 1.1.0   | 5,792             | 0.16-0.19 | 93-96 | 5,706         | 5,864         |
+| is.ipv6 | 0.9.0   | 4,919             | 0.14-0.16 | 90-97 | 4,774         | 4,980         |
+| isIp    | 1.1.0   | 5,716             | 0.17-0.26 | 93-96 | 5,628         | 5,764         |
+| is.ip   | 0.9.0   | 4,572             | 0.16-0.28 | 93-96 | 4,468         | 4,615         |
 
 ## Contributing
 README generate by Google Translate (sorry for bad english)
