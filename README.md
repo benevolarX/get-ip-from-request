@@ -68,6 +68,6 @@ const server = createServer((req, res) => {
 | is.ip   | 0.9.0   | 4,572             | 0.16-0.28 | 93-96 | 4,468         | 4,615         |
 
 ## Contributing
-README generate by Google Translate (sorry for bad english)
+
 ## License
 [MIT](https://github.com/benevolarX/get-ip-from-request/blob/main/LICENSE)
