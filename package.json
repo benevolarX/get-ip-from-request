@@ -4,19 +4,21 @@
   "description": "get ip client from request and validate ip (v4/v6)",
   "source": "lib/index.js",
   "main": "dist/index.js",
+  "module": "./dist/index.esm.js",
   "files": [
     "dist",
     "src"
   ],
-  "type": "module",
+  "type": "commonjs",
   "types": "./lib/index.d.ts",
   "engines": {
     "node": ">=14.16.0"
   },
   "scripts": {
     "bench": "node benchmark/index.js",
-    "build": "esbuild lib/index.js --bundle --platform=node --target=es2020 --format=esm --outfile=/dist/index.js",
-    "dev": "esbuild lib/index.js --bundle --sourcemap --minify --platform=node --target=es2020 --outfile=/dist/index.js",
+    "build": "npm run build:cjs && npm run build:esm",
+    "build:cjs": "esbuild lib/index.js --bundle --platform=node --target=es2020 --format=cjs --outfile=/dist/index.js",
+    "build:esm": "esbuild lib/index.js --bundle --platform=node --target=es2020 --format=esm --outfile=/dist/index.esm.js",
     "clean": "rimraf dist",
     "rebuild": "npm run clean && npm run build",
     "test": "node tests/index.test.js"
