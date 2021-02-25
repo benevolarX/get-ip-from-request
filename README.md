@@ -23,12 +23,13 @@ console.log(`${localhost} is ip v6 ? `, isIpv6(localhost)); // false
 const server = createServer((req, res) => {
 
   // simple use
-  const ip = getIpFromRequest(req)
+  //const ip = getIpFromRequest(req)
 
   // OR custum use
-  //const options = { headers: ['my-ip-header-want-to-be-check']}
-  //const myPersonnalGetIpFromRequest = getIpFromRequestBuilder(options)
-  //const ip = myPersonnalGetIpFromRequest(req)
+  const options = { headers: ['my-ip-header-want-to-be-check'] }
+  const myPersonnalGetIpFromRequest = getIpFromRequestBuilder(options)
+  
+  const ip = myPersonnalGetIpFromRequest(req)
   
   const v4 = isIpv4(ip)
   const v6 = isIpv6(ip)
