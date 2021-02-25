@@ -13,7 +13,9 @@
     }
   },
   "files": [
-    "dist",
+    "dist/index.js",
+    "dist/index.esm.mjs",
+    "dist/index.d.ts",
     "src"
   ],
   "type": "commonjs",
