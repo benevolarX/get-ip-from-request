@@ -8,9 +8,9 @@
   "unpkg": "dist/index.umd.js",
   "exports": {
     ".": {
-      "umd": "./dist/index.umd.js",
-      "import": "./dist/index.modern.js",
-      "require": "./dist/index.module.js"
+      "umd": "./dist/get-ip-from-request.umd.js",
+      "import": "./dist/get-ip-from-request.modern.js",
+      "require": "./dist/get-ip-from-request.module.js"
     },
     "./package.json": "./package.json",
     "./": "./"
