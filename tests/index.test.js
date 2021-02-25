@@ -1,5 +1,5 @@
 const { test } = require('tape')
-const { isIpv4, isIpv6, isIp } = require('../lib/index.js')
+const { isIpv4, isIpv6, isIp } = require('../')
 // const { ip: isIp, ipv4: isIpv4, ipv6: isIpv6 } = require('is_js')
 const { v4, v4not, v6, v6not } = require('./data.js')
 

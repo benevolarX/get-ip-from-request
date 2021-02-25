@@ -1,5 +1,5 @@
 const Suite = require('benchmark').Suite
-const { isIp, isIpv4, isIpv6 } = require('../lib/index.js')
+const { isIp, isIpv4, isIpv6 } = require('../')
 const { ipv4: ISJSipv4, ipv6: ISJSipv6, ip: ISJSip } = require('is_js')
 const { v4, v4not, v6, v6not } = require('../tests/data.js')
 
