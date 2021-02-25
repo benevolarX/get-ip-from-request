@@ -1,9 +1,8 @@
-import { IncomingHttpHeaders } from 'http'
-interface Headers extends IncomingHttpHeaders {
+interface Headers {
   [key: string]: string
 }
 
-interface Request extends IncomingHttpHeaders {
+interface Request {
   headers: Headers;
   connection: {
     remoteAddress?: string;
