@@ -1,2 +1,89 @@
-function e(e,r){(null==r||r>e.length)&&(r=e.length);for(var d=0,t=new Array(r);d<r;d++)t[d]=e[d];return t}var r=/^(?:\d|[1-9]\d|1\d{2}|2[0-4]\d|25[0-5])(?:\.(?:\d|[1-9]\d|1\d{2}|2[0-4]\d|25[0-5])){3}$/,d=/^(?:(((([\dA-Fa-f]{1,4}:){7}([\dA-Fa-f]{1,4}|:))|(([\dA-Fa-f]{1,4}:){6}(:[\dA-Fa-f]{1,4}|((?:(?:([\d]|[1-9][\d]|1[\d]{2}|2[0-4][\d]|25[0-5]))\.){3}(?:([\d]|[1-9][\d]|1[\d]{2}|2[0-4][\d]|25[0-5])))|:))|(([\dA-Fa-f]{1,4}:){5}(((:[\dA-Fa-f]{1,4}){1,2})|:((?:(?:([\d]|[1-9][\d]|1[\d]{2}|2[0-4][\d]|25[0-5]))\.){3}(?:([\d]|[1-9][\d]|1[\d]{2}|2[0-4][\d]|25[0-5])))|:))|(([\dA-Fa-f]{1,4}:){4}(((:[\dA-Fa-f]{1,4}){1,3})|((:[\dA-Fa-f]{1,4})?:((?:(?:([\d]|[1-9][\d]|1[\d]{2}|2[0-4][\d]|25[0-5]))\.){3}(?:([\d]|[1-9][\d]|1[\d]{2}|2[0-4][\d]|25[0-5]))))|:))|(([\dA-Fa-f]{1,4}:){3}(((:[\dA-Fa-f]{1,4}){1,4})|((:[\dA-Fa-f]{1,4}){0,2}:((?:(?:([\d]|[1-9][\d]|1[\d]{2}|2[0-4][\d]|25[0-5]))\.){3}(?:([\d]|[1-9][\d]|1[\d]{2}|2[0-4][\d]|25[0-5]))))|:))|(([\dA-Fa-f]{1,4}:){2}(((:[\dA-Fa-f]{1,4}){1,5})|((:[\dA-Fa-f]{1,4}){0,3}:((?:(?:([\d]|[1-9][\d]|1[\d]{2}|2[0-4][\d]|25[0-5]))\.){3}(?:([\d]|[1-9][\d]|1[\d]{2}|2[0-4][\d]|25[0-5]))))|:))|(([\dA-Fa-f]{1,4}:){1}(((:[\dA-Fa-f]{1,4}){1,6})|((:[\dA-Fa-f]{1,4}){0,4}:((?:(?:([\d]|[1-9][\d]|1[\d]{2}|2[0-4][\d]|25[0-5]))\.){3}(?:([\d]|[1-9][\d]|1[\d]{2}|2[0-4][\d]|25[0-5]))))|:))|(:(((:[\dA-Fa-f]{1,4}){1,7})|((:[\dA-Fa-f]{1,4}){0,5}:((?:(?:([\d]|[1-9][\d]|1[\d]{2}|2[0-4][\d]|25[0-5]))\.){3}(?:([\d]|[1-9][\d]|1[\d]{2}|2[0-4][\d]|25[0-5]))))|:)))(%.+)?))$/i,t=function(e){return r.test(e)||d.test(e)},n=["x-client-ip","cf-connecting-ip","fastly-client-ip","true-client-ip","x-real-ip","x-cluster-client-ip","x-forwarded","forwarded-for","forwarded"];function o(r,d){var o,i,l,u;if(void 0===d&&(d={}),null!=r&&r.headers){var a,s,f;if(null!=(a=r.headers)&&a["x-forwarded-for"]){var c=function(e){if(void 0===e&&(e=null),null===e)return null;if("[object String]"!==toString.call(e))throw new TypeError('Expected a string, got "'+typeof e+'"');return e.split(",").shift().trim()}(r.headers["x-forwarded-for"]);if(null!==c&&t(c))return c}for(var A,m=function(r,d){var t;if("undefined"==typeof Symbol||null==r[Symbol.iterator]){if(Array.isArray(r)||(t=function(r,d){if(r){if("string"==typeof r)return e(r,d);var t=Object.prototype.toString.call(r).slice(8,-1);return"Object"===t&&r.constructor&&(t=r.constructor.name),"Map"===t||"Set"===t?Array.from(r):"Arguments"===t||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t)?e(r,d):void 0}}(r))){t&&(r=t);var n=0;return function(){return n>=r.length?{done:!0}:{done:!1,value:r[n++]}}}throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}return(t=r[Symbol.iterator]()).next.bind(t)}(null!=(s=d)&&s.headers?[].concat(n,[null==(f=d)?void 0:f.headers]):n);!(A=m()).done;){var p,v=A.value;if(null!=(p=r.headers)&&p[v]&&t(r.headers[v]))return r.headers[v]}}if(null!=r&&r.connection){var F,y,h;if(null!=r&&null!=(F=r.connection)&&F.remoteAddress&&t(r.connection.remoteAddress))return r.connection.remoteAddress;if(null!=r&&null!=(y=r.connection)&&null!=(h=y.socket)&&h.remoteAddress&&t(r.connection.socket.remoteAddress))return r.connection.socket.remoteAddress}return null!=r&&null!=(o=r.socket)&&o.remoteAddress&&t(r.socket.remoteAddress)?r.socket.remoteAddress:null!=r&&null!=(i=r.info)&&i.remoteAddress&&t(r.info.remoteAddress)?r.info.remoteAddress:null!=r&&null!=(l=r.requestContext)&&null!=(u=l.identity)&&u.sourceIp&&t(r.requestContext.identity.sourceIp)?r.requestContext.identity.sourceIp:null}module.exports={isIpv4:function(e){return r.test(e)},isIpv6:function(e){return d.test(e)},isIp:t,getIpFromRequest:function(e){return o(e)},getIpFromRequestBuilder:function(e){return void 0===e&&(e={}),function(r){return o(r,e)}}};
-//# sourceMappingURL=index.js.map
+var __commonJS = (callback, module) => () => {
+  if (!module) {
+    module = {exports: {}};
+    callback(module.exports, module);
+  }
+  return module.exports;
+};
+
+// lib/index.js
+var require_lib = __commonJS((exports, module) => {
+  "use strict";
+  /**!
+   * get-ip-from-request
+   *
+   * @copyright 2021-2022 benevolarX
+   * @license MIT
+   */
+  var regexipv4 = /^(?:\d|[1-9]\d|1\d{2}|2[0-4]\d|25[0-5])(?:\.(?:\d|[1-9]\d|1\d{2}|2[0-4]\d|25[0-5])){3}$/;
+  var regexipv6 = /^(?:(((([\dA-Fa-f]{1,4}:){7}([\dA-Fa-f]{1,4}|:))|(([\dA-Fa-f]{1,4}:){6}(:[\dA-Fa-f]{1,4}|((?:(?:([\d]|[1-9][\d]|1[\d]{2}|2[0-4][\d]|25[0-5]))\.){3}(?:([\d]|[1-9][\d]|1[\d]{2}|2[0-4][\d]|25[0-5])))|:))|(([\dA-Fa-f]{1,4}:){5}(((:[\dA-Fa-f]{1,4}){1,2})|:((?:(?:([\d]|[1-9][\d]|1[\d]{2}|2[0-4][\d]|25[0-5]))\.){3}(?:([\d]|[1-9][\d]|1[\d]{2}|2[0-4][\d]|25[0-5])))|:))|(([\dA-Fa-f]{1,4}:){4}(((:[\dA-Fa-f]{1,4}){1,3})|((:[\dA-Fa-f]{1,4})?:((?:(?:([\d]|[1-9][\d]|1[\d]{2}|2[0-4][\d]|25[0-5]))\.){3}(?:([\d]|[1-9][\d]|1[\d]{2}|2[0-4][\d]|25[0-5]))))|:))|(([\dA-Fa-f]{1,4}:){3}(((:[\dA-Fa-f]{1,4}){1,4})|((:[\dA-Fa-f]{1,4}){0,2}:((?:(?:([\d]|[1-9][\d]|1[\d]{2}|2[0-4][\d]|25[0-5]))\.){3}(?:([\d]|[1-9][\d]|1[\d]{2}|2[0-4][\d]|25[0-5]))))|:))|(([\dA-Fa-f]{1,4}:){2}(((:[\dA-Fa-f]{1,4}){1,5})|((:[\dA-Fa-f]{1,4}){0,3}:((?:(?:([\d]|[1-9][\d]|1[\d]{2}|2[0-4][\d]|25[0-5]))\.){3}(?:([\d]|[1-9][\d]|1[\d]{2}|2[0-4][\d]|25[0-5]))))|:))|(([\dA-Fa-f]{1,4}:){1}(((:[\dA-Fa-f]{1,4}){1,6})|((:[\dA-Fa-f]{1,4}){0,4}:((?:(?:([\d]|[1-9][\d]|1[\d]{2}|2[0-4][\d]|25[0-5]))\.){3}(?:([\d]|[1-9][\d]|1[\d]{2}|2[0-4][\d]|25[0-5]))))|:))|(:(((:[\dA-Fa-f]{1,4}){1,7})|((:[\dA-Fa-f]{1,4}){0,5}:((?:(?:([\d]|[1-9][\d]|1[\d]{2}|2[0-4][\d]|25[0-5]))\.){3}(?:([\d]|[1-9][\d]|1[\d]{2}|2[0-4][\d]|25[0-5]))))|:)))(%.+)?))$/i;
+  var isIpv4 = (v) => regexipv4.test(v);
+  var isIpv6 = (v) => regexipv6.test(v);
+  var isIp = (v) => regexipv4.test(v) || regexipv6.test(v);
+  var checkHeaders = [
+    "x-client-ip",
+    "cf-connecting-ip",
+    "fastly-client-ip",
+    "true-client-ip",
+    "x-real-ip",
+    "x-cluster-client-ip",
+    "x-forwarded",
+    "forwarded-for",
+    "forwarded"
+  ];
+  function getIpXForwardedFor(v = null) {
+    if (v === null) {
+      return null;
+    }
+    if (toString.call(v) !== "[object String]") {
+      throw new TypeError(`Expected a string, got "${typeof v}"`);
+    }
+    return v.split(",").shift().trim();
+  }
+  function getIpFromRequestPrivate(req, options = {}) {
+    if (req?.headers) {
+      if (req.headers?.["x-forwarded-for"]) {
+        const xForwardedFor = getIpXForwardedFor(req.headers["x-forwarded-for"]);
+        if (xForwardedFor !== null && isIp(xForwardedFor)) {
+          return xForwardedFor;
+        }
+      }
+      const listOfHeaders = options?.headers ? [...checkHeaders, options?.headers] : checkHeaders;
+      for (const index of listOfHeaders) {
+        if (req.headers?.[index] && isIp(req.headers[index])) {
+          return req.headers[index];
+        }
+      }
+    }
+    if (req?.connection) {
+      if (req?.connection?.remoteAddress && isIp(req.connection.remoteAddress)) {
+        return req.connection.remoteAddress;
+      }
+      if (req?.connection?.socket?.remoteAddress && isIp(req.connection.socket.remoteAddress)) {
+        return req.connection.socket.remoteAddress;
+      }
+    }
+    if (req?.socket?.remoteAddress && isIp(req.socket.remoteAddress)) {
+      return req.socket.remoteAddress;
+    }
+    if (req?.info?.remoteAddress && isIp(req.info.remoteAddress)) {
+      return req.info.remoteAddress;
+    }
+    if (req?.requestContext?.identity?.sourceIp && isIp(req.requestContext.identity.sourceIp)) {
+      return req.requestContext.identity.sourceIp;
+    }
+    return null;
+  }
+  var getIpFromRequest = (req) => getIpFromRequestPrivate(req);
+  function getIpFromRequestBuilder(options = {}) {
+    return (req) => getIpFromRequestPrivate(req, options);
+  }
+  module.exports = {
+    isIpv4,
+    isIpv6,
+    isIp,
+    getIpFromRequest,
+    getIpFromRequestBuilder
+  };
+});
+export default require_lib();
