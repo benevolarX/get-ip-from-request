@@ -3,8 +3,10 @@
   "version": "1.1.0",
   "description": "get ip client from request and validate ip (v4/v6)",
   "source": "lib/index.js",
+  "exports": {
+    ".": "./dist/index.modern.js"
+  },
   "main": "dist/index.js",
-  "exports": "dist/index.modern.js",
   "module": "dist/index.module.js",
   "unpkg": "dist/index.umd.js",
   "files": [
@@ -17,7 +19,6 @@
   },
   "scripts": {
     "bench": "node benchmark/index.js",
-    "bis": "microbundle",
     "micro": "microbundle build --raw",
     "build": "esbuild lib/index.js --bundle --sourcemap --platform=node --target=es2020 --outfile=/dist/index.js",
     "test": "node tests/index.test.js"
