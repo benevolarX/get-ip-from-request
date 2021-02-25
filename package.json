@@ -3,20 +3,19 @@
   "version": "1.1.1",
   "description": "get ip client from request and validate ip (v4/v6)",
   "source": "lib/index.js",
-  "main": "./dist/index.js",
-  "module": "./dist/index.esm.mjs",
+  "main": "./lib/index.js",
+  "module": "./lib/index.mjs",
   "exports": {
     ".": {
-      "require":  "./dist/index.js",
-      "node": "./dist/index.esm.mjs",
-      "default": "./dist/index.js"
+      "require":  "./lib/index.js",
+      "node": "./lib/index.mjs",
+      "default": "./lib/index.js"
     }
   },
   "files": [
-    "dist/index.js",
-    "dist/index.esm.mjs",
-    "dist/index.d.ts",
-    "src"
+    "lib/index.js",
+    "lib/index.mjs",
+    "lib/index.d.ts"
   ],
   "type": "commonjs",
   "types": "./lib/index.d.ts",
