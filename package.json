@@ -42,7 +42,8 @@
     "validate",
     "es2020",
     "get",
-    "from"
+    "from",
+    "req"
   ],
   "author": "benevolarX",
   "license": "MIT",
