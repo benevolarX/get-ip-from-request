@@ -1,7 +1,7 @@
 [![GitHub license](https://img.shields.io/github/license/benevolarX/get-ip-from-request?style=for-the-badge)](https://github.com/benevolarX/get-ip-from-request/blob/main/LICENSE)
 [![npm](https://img.shields.io/npm/v/get-ip-from-request?style=for-the-badge)](https://www.npmjs.com/package/get-ip-from-request)
 [![npm](https://img.shields.io/npm/dw/get-ip-from-request?style=for-the-badge)](https://www.npmjs.com/package/get-ip-from-request)
-![npm bundle size](https://img.shields.io/bundlephobia/min/get-ip-from-request?style=for-the-badge)
+[![Downloads](https://img.shields.io/npm/dt/get-ip-from-request.svg?style=flat)](https://www.npmjs.com/package/get-ip-from-request)
 [![GitHub issues](https://img.shields.io/github/issues/benevolarX/get-ip-from-request?style=for-the-badge)](https://github.com/benevolarX/get-ip-from-request/issues)
 # get-ip-from-request
 get-ip-from-request is a 0-dependency small configurable tool to get ip from http request and validate ip (v4 & v6)
@@ -68,7 +68,21 @@ const server = createServer((req, res) => {
 | isIp    | 1.1.0   | 5,716             | 0.17-0.26 | 93-96 | 5,628         | 5,764         |
 | is.ip   | 0.9.0   | 4,572             | 0.16-0.28 | 93-96 | 4,468         | 4,615         |
 
-## Contributing
+* __Machine:__ Windows 10 - x64 | AMD Ryzen 3 1300X Quad-Core - 3.5GHz | 16GB RAM.
+* __Method:__ `require('benchmark').Suite`. (5 rounds to measure min, max & average)
+* __Node:__ `v17.5.0`
+* __Run:__ Wed, 16 Feb 2022 15:44:26 GMT 2022
 
+|         | Version | ops/sec (average) | +-%       | runs  | ops/sec min   | ops/sec max   |
+| :--     | --:     | :-:               | --:       | --:   | --:           | --:           |
+| isIpv4  | 1.2.2   | 188,128           | 0.21-0.44 | 88-95 | 186,411       | 190,479       |
+| is.ipv4 | 0.9.0   | 185,153           | 0.34-0.95 | 89-94 | 177,981       | 188,817       |
+| isIpv6  | 1.2.2   | 6,521             | 0.17-0.55 | 93-96 | 6,417         | 6,587         |
+| is.ipv6 | 0.9.0   | 4,970             | 0.15-0.25 | 93-96 | 4,940         | 4,994         |
+| isIp    | 1.2.2   | 6,421             | 0.17-0.20 | 92-95 | 6,373         | 6,462         |
+| is.ip   | 0.9.0   | 4,593             | 0.16-0.28 | 93-95 | 4,576         | 4,613         |
+
+## Contributing
+...
 ## License
 [MIT](https://github.com/benevolarX/get-ip-from-request/blob/main/LICENSE)
