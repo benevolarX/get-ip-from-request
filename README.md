@@ -1,7 +1,7 @@
 [![GitHub license](https://img.shields.io/github/license/benevolarX/get-ip-from-request?style=for-the-badge)](https://github.com/benevolarX/get-ip-from-request/blob/main/LICENSE)
 [![npm](https://img.shields.io/npm/v/get-ip-from-request?style=for-the-badge)](https://www.npmjs.com/package/get-ip-from-request)
 [![npm](https://img.shields.io/npm/dw/get-ip-from-request?style=for-the-badge)](https://www.npmjs.com/package/get-ip-from-request)
-[![Downloads](https://img.shields.io/npm/dt/get-ip-from-request.svg?style=flat)](https://www.npmjs.com/package/get-ip-from-request)
+[![Downloads](https://img.shields.io/npm/dt/get-ip-from-request.svg)](https://www.npmjs.com/package/get-ip-from-request)
 [![GitHub issues](https://img.shields.io/github/issues/benevolarX/get-ip-from-request?style=for-the-badge)](https://github.com/benevolarX/get-ip-from-request/issues)
 # get-ip-from-request
 get-ip-from-request is a 0-dependency small configurable tool to get ip from http request and validate ip (v4 & v6)
