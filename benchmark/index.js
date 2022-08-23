@@ -1,4 +1,5 @@
 const Suite = require('benchmark').Suite
+const { is_ip_v4, is_ip_v6, is_ip } = require('./is-request-ip.js')
 const { isIp, isIpv4, isIpv6 } = require('../')
 const { ipv4: ISJSipv4, ipv6: ISJSipv6, ip: ISJSip } = require('is_js')
 const { v4, v4not, v6, v6not } = require('../tests/data.js')
@@ -34,18 +35,18 @@ suite
       ISJSipv4(totest)
     }
   })
-  .add('test ip v6 is.ipv6', () => {
+  .add('test ip v4 is-request-ip', () => {
     for (const totest of v4) {
-      ISJSipv6(totest)
+      is_ip_v4(totest)
     }
     for (const totest of v4not) {
-      ISJSipv6(totest)
+      is_ip_v4(totest)
     }
     for (const totest of v6) {
-      ISJSipv6(totest)
+      is_ip_v4(totest)
     }
     for (const totest of v6not) {
-      ISJSipv6(totest)
+      is_ip_v4(totest)
     }
   })
   .add('test ip v6 my lib isIpv6', () => {
@@ -60,6 +61,34 @@ suite
     }
     for (const totest of v6not) {
       isIpv6(totest)
+    }
+  })
+  .add('test ip v6 is.ipv6', () => {
+    for (const totest of v4) {
+      ISJSipv6(totest)
+    }
+    for (const totest of v4not) {
+      ISJSipv6(totest)
+    }
+    for (const totest of v6) {
+      ISJSipv6(totest)
+    }
+    for (const totest of v6not) {
+      ISJSipv6(totest)
+    }
+  })
+  .add('test ip v6 is-request-ip is_ip_v6', () => {
+    for (const totest of v4) {
+      is_ip_v6(totest)
+    }
+    for (const totest of v4not) {
+      is_ip_v6(totest)
+    }
+    for (const totest of v6) {
+      is_ip_v6(totest)
+    }
+    for (const totest of v6not) {
+      is_ip_v6(totest)
     }
   })
   .add('test ip is IP my lib isIp', () => {
@@ -88,6 +117,20 @@ suite
     }
     for (const totest of v6not) {
       ISJSip(totest)
+    }
+  })
+  .add('test ip is IP of is-request-ip', () => {
+    for (const totest of v4) {
+      is_ip(totest)
+    }
+    for (const totest of v4not) {
+      is_ip(totest)
+    }
+    for (const totest of v6) {
+      is_ip(totest)
+    }
+    for (const totest of v6not) {
+      is_ip(totest)
     }
   })
   .on('cycle', function (event) {
