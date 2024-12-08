@@ -1,6 +1,6 @@
 {
   "name": "get-ip-from-request",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "get ip client from request and validate ip (v4/v6)",
   "source": "./lib/index.js",
   "main": "./lib/index.js",
@@ -53,9 +53,9 @@
   },
   "homepage": "https://github.com/benevolarX/get-ip-from-request#readme",
   "devDependencies": {
-    "@types/node": "^22.2.0",
+    "@types/node": "^22.10.1",
     "benchmark": "^2.1.4",
     "microtime": "^3.1.1",
-    "tape": "^5.8.1"
+    "tape": "^5.9.0"
   }
 }
