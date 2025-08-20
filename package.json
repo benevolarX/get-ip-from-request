@@ -1,0 +1,61 @@
+{
+  "name": "get-ip-from-request",
+  "version": "2.0.2",
+  "description": "get ip client from request and validate ip (v4/v6)",
+  "source": "./lib/index.js",
+  "main": "./lib/index.js",
+  "module": "./lib/index.mjs",
+  "exports": {
+    ".": {
+      "require": "./lib/index.js",
+      "node": "./lib/index.mjs",
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    }
+  },
+  "files": [
+    "lib/index.js",
+    "lib/index.mjs",
+    "lib/index.d.ts"
+  ],
+  "type": "commonjs",
+  "types": "./lib/index.d.ts",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "bench": "node benchmark/index.js",
+    "test": "node tests/index.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benevolarX/get-ip-from-request.git"
+  },
+  "keywords": [
+    "ip",
+    "request",
+    "ipv4",
+    "ipv6",
+    "regex",
+    "client",
+    "address",
+    "headers",
+    "validate",
+    "es2022",
+    "get",
+    "from",
+    "req"
+  ],
+  "author": "victor-auffret",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/benevolarX/get-ip-from-request/issues"
+  },
+  "homepage": "https://github.com/benevolarX/get-ip-from-request#readme",
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "benchmark": "^2.1.4",
+    "microtime": "^3.1.1",
+    "tape": "^5.9.0"
+  }
+}
