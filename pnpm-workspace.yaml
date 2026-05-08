@@ -1,2 +1,4 @@
+allowBuilds:
+  microtime: true
 onlyBuiltDependencies:
   - microtime
